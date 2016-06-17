@@ -184,13 +184,13 @@ serveIndex.html = function _html(req, res, files, next, dir, showUp, icons, path
     if (err) return next(err);
 
 
-    // combine the stats into the file list, also discription
+    // combine the stats into the file list, also description
     var fileList = files.map(function (file, i) {
-      var _path = path + file+'/.discription';
-      var discription = fs.existsSync(_path)
+      var _path = path + file+'/.description';
+      var description = fs.existsSync(_path)
         ? fs.readFileSync(_path).toString()
         : '';
-      return { name: file, stat: stats[i] , discription: discription };
+      return { name: file, stat: stats[i] , description: description };
     });
 
     // sort file list
@@ -299,7 +299,7 @@ function createHtmlFileList(files, dir, useIcons, view) {
       + escapeHtml(normalizeSlashes(normalize(path.join('/'))))
       + '" class="' + escapeHtml(classes.join(' ')) + '"'
       + ' title="' + escapeHtml(file.name) + '">'
-      + '<span class="name">' + escapeHtml(file.name + (file.discription && ' (' + file.discription + ')')) + '</span>'
+      + '<span class="name">' + escapeHtml(file.name + (file.description && ' (' + file.description + ')')) + '</span>'
       + '<span class="size">' + escapeHtml(size) + '</span>'
       + '<span class="date">' + escapeHtml(date) + '</span>'
       + '</a></li>';

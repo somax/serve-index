@@ -1,3 +1,7 @@
+forked from expressjs/serve-index
+
+- add folder description, read from `.description` file.
+
 # serve-index
 
 [![NPM Version][npm-image]][npm-url]
