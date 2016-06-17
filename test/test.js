@@ -405,7 +405,7 @@ describe('serveIndex(root)', function () {
         request(server)
         .get('/users/')
         .set('Accept', 'text/html')
-        .expect('[{"name":"..","stat":true},{"name":"#dir","stat":true},{"name":"index.html","stat":true},{"name":"tobi.txt","stat":true}]')
+        .expect('[{"name":"..","stat":true,"description":"description here..."},{"name":"#dir","stat":true,"description":""},{"name":"index.html","stat":true,"description":""},{"name":"tobi.txt","stat":true,"description":""}]')
         .expect(200, done);
       });
 
