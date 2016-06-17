@@ -298,7 +298,7 @@ function createHtmlFileList(files, dir, useIcons, view) {
     return '<li><a href="'
       + escapeHtml(normalizeSlashes(normalize(path.join('/'))))
       + '" class="' + escapeHtml(classes.join(' ')) + '"'
-      + ' title="' + escapeHtml(file.name) + '">'
+      + ' title="' + escapeHtml(file.name + '\n' + file.description) + '">'
       + '<span class="name">' + escapeHtml(file.name + (file.description && ' (' + file.description + ')')) + '</span>'
       + '<span class="size">' + escapeHtml(size) + '</span>'
       + '<span class="date">' + escapeHtml(date) + '</span>'
