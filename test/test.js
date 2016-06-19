@@ -167,6 +167,7 @@ describe('serveIndex(root)', function () {
             '/collect',
             '/g%23%20%253%20o%20%26%20%252525%20%2537%20dir',
             '/users',
+            '/book.json',
             '/file%20%231.txt',
             '/foo%20%26%20bar',
             '/nums',
@@ -405,7 +406,7 @@ describe('serveIndex(root)', function () {
         request(server)
         .get('/users/')
         .set('Accept', 'text/html')
-        .expect('[{"name":"..","stat":true,"description":"description here..."},{"name":"#dir","stat":true,"description":""},{"name":"index.html","stat":true,"description":""},{"name":"tobi.txt","stat":true,"description":""}]')
+        .expect('[{"name":"..","stat":true,"title":"book title","description":"book description"},{"name":"#dir","stat":true},{"name":"index.html","stat":true},{"name":"tobi.txt","stat":true}]')
         .expect(200, done);
       });
 

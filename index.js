@@ -186,11 +186,11 @@ serveIndex.html = function _html(req, res, files, next, dir, showUp, icons, path
 
     // combine the stats into the file list, also description
     var fileList = files.map(function (file, i) {
-      var _path = path + file+'/.description';
-      var description = fs.existsSync(_path)
-        ? fs.readFileSync(_path).toString()
-        : '';
-      return { name: file, stat: stats[i] , description: description };
+      var _path = path + file+'/book.json';
+      var _bookInfo = fs.existsSync(_path)
+        ? require(_path)
+        : {};
+      return { name: file, stat: stats[i], title: _bookInfo.title, description: _bookInfo.description };
     });
 
     // sort file list
@@ -298,8 +298,8 @@ function createHtmlFileList(files, dir, useIcons, view) {
     return '<li><a href="'
       + escapeHtml(normalizeSlashes(normalize(path.join('/'))))
       + '" class="' + escapeHtml(classes.join(' ')) + '"'
-      + ' title="' + escapeHtml(file.name + '\n' + file.description) + '">'
-      + '<span class="name">' + escapeHtml(file.name + (file.description && ' (' + file.description + ')')) + '</span>'
+      + ' title="' + escapeHtml((file.title || '') +'<' + file.name + '>\n' + (file.description || '-no-description-')) + '">'
+      + '<span class="name">' + escapeHtml(file.title || file.name) + '</span>'
       + '<span class="size">' + escapeHtml(size) + '</span>'
       + '<span class="date">' + escapeHtml(date) + '</span>'
       + '</a></li>';
