@@ -295,7 +295,7 @@ function createHtmlFileList(files, dir, useIcons, view) {
       ? file.stat.size
       : '';
 
-    return '<li><a href="'
+    return '<li><a target="gitbook" href="'
       + escapeHtml(normalizeSlashes(normalize(path.join('/'))))
       + '" class="' + escapeHtml(classes.join(' ')) + '"'
       + ' title="' + escapeHtml((file.title || '') +'<' + file.name + '>\n' + (file.description || '-no-description-')) + '">'
