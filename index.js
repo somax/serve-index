@@ -295,10 +295,14 @@ function createHtmlFileList(files, dir, useIcons, view) {
       ? file.stat.size
       : '';
 
-    return '<li><a target="gitbook" href="'
-      + escapeHtml(normalizeSlashes(normalize(path.join('/'))))
+    var filePath = escapeHtml(normalizeSlashes(normalize(path.join('/'))));
+
+    var coverStyle = view == 'cover' ? 'background-image:url('+ filePath +'/cover.jpg)' : '';
+
+    return '<li style="'+ coverStyle +'"><a target="gitbook" href="'
+      + filePath
       + '" class="' + escapeHtml(classes.join(' ')) + '"'
-      + ' title="' + escapeHtml((file.title || '') +'<' + file.name + '>\n' + (file.description || '-no-description-')) + '">'
+      + ' title="' + escapeHtml((file.title || '') +'\n<' + file.name + '>\n' + (file.description || '')) + '">'
       + '<span class="name">' + escapeHtml(file.title || file.name) + '</span>'
       + '<span class="size">' + escapeHtml(size) + '</span>'
       + '<span class="date">' + escapeHtml(date) + '</span>'

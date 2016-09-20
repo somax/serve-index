@@ -151,6 +151,43 @@ ul#files li a.highlight {
   display: none;
 }
 
+
+/*cover*/
+.view-cover .name {
+  width: 100%;
+  background-position: 8px 5px;
+}
+.view-cover .size,
+.view-cover .date {
+  display: none;
+}
+ul#files.view-cover li{
+  width:120px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 6px;
+}
+ul#files.view-cover li a{
+  height:140px;
+  border:1px solid #e2e2e2;
+  border-radius: 0px;
+  transition: all 0.5s;
+}
+ul#files.view-cover .icon-directory .name{
+  background-image:none;
+  text-indent: 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+ul#files.view-cover li a:focus,
+ul#files.view-cover li a:hover {
+  transform: scale(1.05,1.05);
+}
+ul#files.view-cover li a.highlight {
+  background: rgba(255, 255, 79, 0.5);
+  transform: scale(1.05,1.05);
+}
+
 /*details*/
 ul#files.view-details li {
   float: none;
