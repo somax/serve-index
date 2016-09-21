@@ -98,7 +98,7 @@ function serveIndex(root, options) {
   var template = opts.template || defaultTemplate;
   var view = opts.view || 'tiles';
 
-  return function (req, res, next) {
+  function _factory (req, res, next) {
     if (req.method !== 'GET' && req.method !== 'HEAD') {
       res.statusCode = 'OPTIONS' === req.method ? 200 : 405;
       res.setHeader('Allow', 'GET, HEAD, OPTIONS');
@@ -164,6 +164,14 @@ function serveIndex(root, options) {
       });
     });
   };
+
+
+  _factory.setView = function (value) {
+    view = value;
+    console.log(view);
+
+  }
+  return _factory;
 };
 
 /**
@@ -259,6 +267,7 @@ function createHtmlFileList(files, dir, useIcons, view) {
     + (view == 'details' ? (
       '<li class="header">'
       + '<span class="name">Name</span>'
+      + '<span class="title">Title</span>'
       + '<span class="size">Size</span>'
       + '<span class="date">Modified</span>'
       + '</li>') : '');
@@ -302,8 +311,9 @@ function createHtmlFileList(files, dir, useIcons, view) {
     return '<li style="'+ coverStyle +'"><a target="gitbook" href="'
       + filePath
       + '" class="' + escapeHtml(classes.join(' ')) + '"'
-      + ' title="' + escapeHtml((file.title || '') +'\n<' + file.name + '>\n' + (file.description || '')) + '">'
-      + '<span class="name">' + escapeHtml(file.title || file.name) + '</span>'
+      + ' title="' + escapeHtml((file.title || '- no title -') + '\n' + (file.description || '- no description -')) + '">'
+      + '<span class="name">' + escapeHtml(file.name) + '</span>'
+      + '<span class="title">' + escapeHtml(file.title || '- NO TITLE -') + '</span>'
       + '<span class="size">' + escapeHtml(size) + '</span>'
       + '<span class="date">' + escapeHtml(date) + '</span>'
       + '</a></li>';

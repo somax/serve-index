@@ -152,41 +152,71 @@ ul#files li a.highlight {
 }
 
 
+
 /*cover*/
-.view-cover .name {
-  width: 100%;
-  background-position: 8px 5px;
+ul#files.view-cover span{
+  position:absolute;
+  text-indent: 0;
+  text-align:center;
 }
-.view-cover .size,
-.view-cover .date {
+ul#files.view-cover span.title {
+  left: 0;
+  right: 0;
+  top: 10px;
+  background-position: 8px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+ul#files.view-cover span.size{
   display: none;
 }
+ul#files.view-cover span.name,
+ul#files.view-cover span.date{
+  bottom: 0px;
+  font-size:10px;
+  width: 100%;
+  opacity: 0.5;
+} 
+ul#files.view-cover span.name{
+  text-indent:0;
+  line-height:50px;
+  bottom: 10px;
+  height:40px;
+}
+ul#files.view-cover .icon .name{
+  background-position: 50% 0px;
+}
 ul#files.view-cover li{
-  width:120px;
-  background-size: 100% 100%;
+  position: relative;
+  width:160px;
+  background-size: 100% auto;
   background-repeat: no-repeat;
-  margin: 6px;
+  background-position: 50% 50%;
+  margin: 10px;
+  background-color:#eee;
+  transition: all 0.5s;
 }
 ul#files.view-cover li a{
-  height:140px;
+  height:210px;
   border:1px solid #e2e2e2;
   border-radius: 0px;
   transition: all 0.5s;
 }
+
+
 ul#files.view-cover .icon-directory .name{
   background-image:none;
-  text-indent: 0;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.7);
 }
-ul#files.view-cover li a:focus,
-ul#files.view-cover li a:hover {
-  transform: scale(1.05,1.05);
-}
-ul#files.view-cover li a.highlight {
+ul#files.view-cover li a.highlight{
   background: rgba(255, 255, 79, 0.5);
-  transform: scale(1.05,1.05);
+  // transform: scale(1.05,1.05);
 }
+ul#files.view-cover li:focus,
+ul#files.view-cover li:hover{
+  box-shadow:rgba(0, 0, 0, 0.25) 0px 4px 4px;
+  transform: scale(1.05,1.05);
+  // margin-top:5px;
+}
+
 
 /*details*/
 ul#files.view-details li {
@@ -203,15 +233,18 @@ ul#files.view-details li.header {
 .view-details .header {
   border-radius: 5px;
 }
+.view-details .title{
+  width: 40%;
+}
 .view-details .name {
-  width: 60%;
+  width: 30%;
   background-position: 8px 5px;
 }
 .view-details .size {
   width: 10%;
 }
 .view-details .date {
-  width: 30%;
+  width: 20%;
 }
 .view-details .size,
 .view-details .date {
@@ -281,6 +314,7 @@ ul#files.view-details li.header {
   #files .date {
     display: none !important;
   }
+  #files .title,
   #files .name {
     float: none;
     display: inline-block;
