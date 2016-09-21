@@ -168,7 +168,7 @@ function serveIndex(root, options) {
 
   _factory.setView = function (value) {
     view = value;
-    console.log(view);
+    console.log('set view:',view);
 
   }
   return _factory;
