@@ -166,7 +166,7 @@ ul#files.view-cover span{
   text-indent: 0;
   text-align:center;
 }
-ul#files.view-cover span.title {
+.view-cover .title {
   left: 0;
   right: 0;
   top: 10px;
@@ -325,7 +325,34 @@ ul#files.view-details li.header {
     text-indent: 0;
     background-position: 0 50%;
   }
+
   #files .icon .name {
     text-indent: 41px;
+  }
+  #files .title{
+    display:none;
+  }
+
+  /*cover*/
+  ul#files.view-cover span{
+    text-indent: 10px;
+    text-align:left;
+    background: none;
+  }
+
+  ul#files.view-cover span.title {
+    display:block;
+  }
+  .view-cover .name{
+    top: 20px;
+    background-image:none !important;
+    // font-size: 12px;
+  }
+  ul#files.view-cover li{
+    background-size: auto 100% ;
+    background-position: 100% 50%;
+  }
+  ul#files.view-cover li a{
+    height:30px;
   }
 }
