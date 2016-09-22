@@ -94,10 +94,14 @@ ul#files li a:hover {
   background: rgba(255,255,255,0.65);
   border: 1px solid #ececec;
 }
-ul#files li a.highlight {
+ul#files li.highlight a {
   -webkit-transition: background .4s ease-in-out;
-  background: #ffff4f;
+  background: rgba(255, 255, 79, 0.5);
   border-color: #E9DC51;
+}
+ul#files li.highlight{
+  transform:scale(1.03);
+  box-shadow:rgba(0, 0, 0, 0.25) 0px 2px 2px;
 }
 #search {
   display: block;
@@ -209,15 +213,11 @@ ul#files.view-cover li a{
 ul#files.view-cover .icon-directory .name{
   background-image:none;
 }
-ul#files.view-cover li a.highlight{
-  background: rgba(255, 255, 79, 0.5);
-  // transform: scale(1.05,1.05);
-}
+
 ul#files.view-cover li:focus,
 ul#files.view-cover li:hover{
   box-shadow:rgba(0, 0, 0, 0.25) 0px 4px 4px;
   transform: scale(1.05,1.05);
-  // margin-top:5px;
 }
 
 

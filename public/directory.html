@@ -53,7 +53,7 @@
 
       function search() {
         var str = $('search').value.toLowerCase();
-        var links = $('files').all('a');
+        var links = $('files').all('li');
 
         links.each(function(link){
           var text = link.textContent.toLowerCase();

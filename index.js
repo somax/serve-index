@@ -308,7 +308,7 @@ function createHtmlFileList(files, dir, useIcons, view) {
 
     var coverStyle = view == 'cover' ? 'background-image:url('+ filePath +'/cover.jpg)' : '';
 
-    return '<li style="'+ coverStyle +'"><a target="gitbook" href="'
+    return '<li style="'+ coverStyle +'" class=""><a target="gitbook" href="'
       + filePath
       + '" class="' + escapeHtml(classes.join(' ')) + '"'
       + ' title="' + escapeHtml((file.title || '- no title -') + '\n' + (file.description || '- no description -')) + '">'
