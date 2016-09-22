@@ -140,6 +140,9 @@ ul#files li a.highlight {
 #files .icon .name {
   text-indent: 28px;
 }
+#files .desc{
+  display:none !important;
+}
 
 /*tiles*/
 .view-tiles .name {

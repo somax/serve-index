@@ -316,6 +316,7 @@ function createHtmlFileList(files, dir, useIcons, view) {
       + '<span class="title">' + escapeHtml(file.title || '- NO TITLE -') + '</span>'
       + '<span class="size">' + escapeHtml(size) + '</span>'
       + '<span class="date">' + escapeHtml(date) + '</span>'
+      + '<span class="desc">' + escapeHtml(file.description) + '</span>'
       + '</a></li>';
   }).join('\n');
 
