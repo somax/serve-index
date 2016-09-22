@@ -300,7 +300,7 @@ ul#files.view-details li.header {
     margin: 0;
   }
   ul#files li:nth-child(odd) {
-    background: #e0e0e0;
+    background-color: #e0e0e0;
   }
   ul#files li a {
     height: auto;
