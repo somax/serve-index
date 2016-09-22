@@ -1,7 +1,7 @@
 {
   "name": "serve-index",
   "description": "Serve directory listings",
-  "version": "1.9.4-gp",
+  "version": "1.9.5-gp",
   "author": "Douglas Christopher Wilson <doug@somethingdoug.com>",
   "license": "MIT",
   "repository": "expressjs/serve-index",
